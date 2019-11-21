@@ -8,8 +8,8 @@ class adminDB (context:Context): SQLiteOpenHelper(context,DATABASE,null,1){
     override fun onCreate(db: SQLiteDatabase?) {//Se crea la tabla usuario, candidato y voto
         db?.execSQL("CREATE TABLE usuario(ncontrol TEXT PRIMARY KEY, nombre_alumno TEXT," +
                 "sexo TEXT, id_carrera INTEGER, nip TEXT)")
-        db?.execSQL("CREATE TABLE candidato(id_candidato INTEGER PRIMARY KEY,nombre_usuario TEXT, ncontrol TEXT," +
-                "descripcion TEXT, propuesta TEXT,id_voto INTEGER)")
+        db?.execSQL("CREATE TABLE candidato(id_candidato INTEGER PRIMARY KEY, ncontrol TEXT," +
+                "descripcion TEXT, propuesta TEXT)")
         db?.execSQL("CREATE TABLE voto(id_voto INTEGER PRIMARY KEY, id_candidato INTEGER, ncontrol TEXT," +
                 "numero_voto INTEGER)")
     }

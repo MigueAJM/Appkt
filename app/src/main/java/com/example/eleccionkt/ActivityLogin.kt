@@ -29,7 +29,6 @@ class ActivityLogin : AppCompatActivity() {
             val result =  admin.Consulta("Select ncontrol,nip From usuario Where ncontrol = '$control'")
             if(result!!.moveToFirst()){
                 var scontrol = result.getString(0)
-                //Toast.makeText(this,"$scontrol",Toast.LENGTH_SHORT).show()
                 var snip = result.getString(1)
                 if (control == scontrol && nip == snip){
                     val actividad = Intent(this,MainActivity::class.java)
